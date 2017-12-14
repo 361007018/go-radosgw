@@ -114,7 +114,7 @@ type UserConfig struct {
 	UserCaps    string `url:"user-caps,ifStringIsNotEmpty"`    // User capabilities
 	MaxBuckets  *int   `url:"max-buckets,itoaIfNotNil"`        // Specify the maximum number of buckets the user can own
 	GenerateKey bool   `url:"generate-key,ifBoolIsTrue"`       // Generate a new key pair and add to the existing keyring
-	Suspended   bool   `url:"suspended,ifBoolIsTrue"`          // Specify whether the user should be suspended
+	Suspended   string `url:"suspended,ifStringIsNotEmpty"`    // Specify whether the user should be suspended,options are: True, False(default)
 	PurgeData   bool   `url:"purge-data,ifBoolIsTrue"`         // When specified the buckets and objects belonging to the user will also be removed
 }
 
